@@ -72,7 +72,9 @@ class MainWindow(QWidget):
 
         # ---- filter button ----
         self.filter_btn = QPushButton()
-        self.filter_btn.setIcon(QIcon("app/icons/filter.png"))  # path to icon
+        project_root = Path(__file__).parent.parent  # File_Search/
+        filter_icon_path = project_root / "icons" / "filter.png"
+        self.filter_btn.setIcon(QIcon(str(filter_icon_path)))  # path to icon
         self.filter_btn.setFixedSize(28, 28)
         self.filter_btn.setStyleSheet("""
             QPushButton {
@@ -92,7 +94,8 @@ class MainWindow(QWidget):
 
         # ---- settings button ----
         self.settings_btn = QPushButton()
-        self.settings_btn.setIcon(QIcon("app/icons/settings.png"))
+        setting_icon_path = project_root / "icons" / "settings.png"
+        self.settings_btn.setIcon(QIcon(str(setting_icon_path)))
         self.settings_btn.setFixedSize(28, 28)
         self.settings_btn.setStyleSheet("""
             QPushButton {
